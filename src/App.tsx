@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AdvancedTools from './AdvancedTools';
 
 export default function App() {
   const [tab, setTab] = useState("report");
@@ -15,6 +16,7 @@ export default function App() {
       <nav style={{ display: "flex", justifyContent: "center", gap: "10px", padding: "15px", background: "#1e293b", flexWrap: "wrap" }}>
         <button onClick={() => setTab("report")} style={tabStyle(tab === "report")}>🛠️ FB Report Assistant</button>
         <button onClick={() => setTab("token")} style={tabStyle(tab === "token")}>🔑 Token Hub</button>
+        <button onClick={() => setTab("advanced")} style={tabStyle(tab === "advanced")}>⚙️ Advanced Tools</button>
         <button onClick={() => setTab("security")} style={tabStyle(tab === "security")}>🛡️ Security Lab (2FA)</button>
       </nav>
 
@@ -23,6 +25,7 @@ export default function App() {
         {tab === "report" && <ReportAssistant />}
         {tab === "token" && <TokenHub />}
         {tab === "security" && <SecurityLab />}
+        {tab === "advanced" && <AdvancedTools />}
       </main>
     </div>
   );
